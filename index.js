@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const flash = require('connect-flash');
 const path = require('path');
@@ -9,7 +10,10 @@ const app = express();
 const port = 3000;
 
 // Conectar a MongoDB
-mongoose.connect('mongodb+srv://gleybert:V07020207@catalogo.tfnw7.mongodb.net/?retryWrites=true&w=majority&appName=catalogo')
+mongoose.connect('mongodb+srv://gleybert:V07020207@catalogo.tfnw7.mongodb.net/?retryWrites=true&w=majority&appName=catalogo', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('Error conectando a MongoDB:', err));
 
@@ -25,9 +29,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Configuración de sesión
 app.use(
   session({
-    secret: 'secret',
-    resave: true,
+    secret: 'V07020207', // Cambia esto por una cadena secreta segura
+    resave: false,
     saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: 'mongodb+srv://gleybert:V07020207@catalogo.tfnw7.mongodb.net/?retryWrites=true&w=majority&appName=catalogo' }),
+    cookie: { secure: false } // Cambia a true si usas HTTPS
   })
 );
 
