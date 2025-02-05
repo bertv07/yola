@@ -197,87 +197,10 @@ body {
     margin-bottom: 2rem;
   }
   
-  @media (max-width: 800px) {
-   .product{
-    display: flex;
-    width: 80%;
-    height: 13rem;
-    position: relative;
-   }
-   .product img{
-    max-width: 100%;
-    width: auto;
-   }
-   .pro{
-    margin-left: 2rem;
-   }
-   .precio{
-    margin-left: 100%;
-   }
-   .pre{
-    position: absolute;
-    margin-left: 20%;
-    margin-top: -1rem;
-   }
-   .pro-cen{
-    margin-top: -1rem;
-    margin-right: 8rem;
-   }
-   .pro-cen p {
-    margin-top: -2rem;
-    margin: .5rem;
-    font-size: .7rem !important;
-    width: 7rem;
-   }
-   .actions{
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .pro-ad img{
-    margin-left: -5rem;
-  }
-  .actions form{
-    margin-top: 0;
-    margin-left: 1rem;
-  }
-  .actions a{
-    margin-top: 1rem;
-    margin-left: 3rem;
-  }
-  }
   @media (max-width: 650px) {
-    .product img{
-      width: 36%;
-      height: 100%;
-    }
     .product{
-      display: flex;
-      width: 80%;
-      height:10rem;
-      position: relative;
-     }
-     .pre{
-      position: absolute;
-      margin-left: 20%;
-      margin-top: -2rem;
-     }
-     .pro{
-      margin-top: -2rem;
-     }
-     .pro-ad h3{
-      margin-top: 1rem;
-      margin-bottom: -.5rem;
-     }
-     .actions form{
-      margin-top: -2rem;
-      margin-left: 0rem;
-    }
-    .actions a{
-      margin-top: 1rem;
-      margin-left: 0rem;
+      width: 12rem;
+      height: 22rem;
     }
   }
   @media (max-width: 600px) {
@@ -298,94 +221,71 @@ body {
       margin-left: -7rem;
     }
   }
-  @media (max-width: 470px) {
-    h1{
-      font-size: 1.5rem;
-    }
+  @media (max-width: 480px) {
     .product{
-      display: flex;
-      width: 80%;
-      height:13rem;
-      position: relative;
-     }
-     .product img{
-      width: 50%;
-      height: 100%;
+      width: 10rem;
+      height: 20rem;
     }
-    .pre{
-      position: absolute;
-      margin-left: 0%;
-      margin-top: -1rem;
-     }
-     .pro-ad img{
-      margin-left: -10rem;
-      width: 30%;
-      height: 70%;
-     }
-     .pro-ad{
+    .product img{
       height: 10rem;
-     }
+    }
+    .name{
+      font-size: 1.3rem;
+      margin-bottom: -1.1rem;
+      width: 100%;
+    }
+    .color-box{
+      margin-top: -.2rem;
+      margin-bottom: -1rem;
+    }
+    .precio{
+      margin-left: 50%;
+    }
+  }
+  @media (max-width: 420px) {
+    .product{
+      width: 8rem;
+      height: 20rem;
+    }
+    .product img{
+      height: 10rem;
+    }
+    .name{
+      font-size: 1.3rem;
+      margin-bottom: -1.1rem;
+      width: 100%;
+    }
+    .color-box{
+      margin-top: -.2rem;
+      margin-bottom: -1rem;
+    }
+    .precio{
+      margin-left: 50%;
+    }
+  }
+  @media (max-width: 360px) {
+    .product{
+      width: 6rem;
+      height: 19.5rem;
+    }
+    .product img{
+      height: 8rem;
+    }
+    .name{
+      font-size: 1.3rem;
+      margin-bottom: -1.1rem;
+      width: 100%;
+    }
+    .color-box{
+      margin-top: -.2rem;
+      margin-bottom: -1rem;
+    }
+    .precio{
+      margin-left: 40%;
+    }
   }
   @media (max-width: 340px) {
-    .product{
-      display: flex;
-      width: 80%;
-      height:10rem;
-      position: relative;
-     }
-     .product img{
-      width: 50%;
-      height: 100%;
-    }
-    .pre{
-      position: absolute;
-      margin-left:-10%;
-      margin-top: -1rem;
-     }
-     .pro{
-      margin-top: -2rem;
-      margin-left: 1rem;
-     }
-     h2{
-      font-size: 1.3rem;
-     }
-     p{
-      margin-top: .1rem;
-      font-size: 1rem;
-     }
-      .pro-ad img{
-      margin-left: -10rem;
-      width: 30%;
-      height: 70%;
-     }
-     .pro-ad{
-      height: 10rem;
-     }
-     .actions form{
-      font-size: .8rem;
-      margin-top: -2rem;
-      margin-left: -1rem;
-    }
-    .actions a{
-
-      font-size: .8rem;
-      margin-top: 1rem;
-      margin-left: 1rem;
-    }
-  }
-  @media (min-width: 1440px) {
-    .product{
-      width: 20%;
-      height: 35rem;
-      margin-top: 3rem;
-     }
-     .product img{
-      height: 70%;
-    }
-    .pro-ad img{
-      height: 12rem;
-    }
-    .pro-ad{
-      width: 200px;
+    .name{
+      font-size: 1.2rem;
     }
   }
