@@ -5,16 +5,12 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const path = require('path');
 const { adminHasLoggedIn } = require('./globals');
-require('dotenv').config(); // Cargar variables de entorno
 
 const app = express();
-const port = process.env.PORT || 3000; // Usar el puerto de las variables de entorno
+const port = 3000;
 
-// Conectar a MongoDB usando la variable de entorno
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+// Conectar a MongoDB
+mongoose.connect('mongodb+srv://gleybert:V07020207@catalogo.tfnw7.mongodb.net/?retryWrites=true&w=majority&appName=catalogo')
   .then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('Error conectando a MongoDB:', err));
 
@@ -30,7 +26,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Servir 
 // Configuración de sesión
 app.use(
   session({
-    secret: process.env.SESSION_SECRET, // Usar la clave secreta de las variables de entorno
+    secret: 'secret',
     resave: true,
     saveUninitialized: true,
   })
