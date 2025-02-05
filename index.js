@@ -29,7 +29,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Configuración de sesión
 app.use(
   session({
-    secret: 'V07020207', // Cambia esto por una cadena secreta segura
+    secret: 'tu-secreto-seguro-aqui', // Cambia esto por una cadena secreta segura
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({ mongoUrl: 'mongodb+srv://gleybert:V07020207@catalogo.tfnw7.mongodb.net/?retryWrites=true&w=majority&appName=catalogo' }),
