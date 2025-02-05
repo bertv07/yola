@@ -89,7 +89,8 @@ const getCssColor = (color) => colorMap[color.toLowerCase()] || color;
 router.get('/', async (req, res) => {
   try {
     const products = await Product.find();
-    res.render('index', { products, getCssColor });
+    const adminHasLoggedIn = req.isAuthenticated && req.isAuthenticated();
+    res.render('index', { products, getCssColor, adminHasLoggedIn });
   } catch (err) {
     res.status(500).json({ error: 'Error al obtener los productos' });
   }
