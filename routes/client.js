@@ -82,7 +82,6 @@ const colorMap = {
   blancoMaiz: 'cornflowerblue',
 };
 
-// Función para obtener el color CSS
 const getCssColor = (color) => colorMap[color.toLowerCase()] || color;
 
 // Mostrar todos los productos
