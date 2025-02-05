@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualizar Producto</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="centrar">
+    <h1>Actualizar producto</h1>
+    <form action="/admin/update-product/<%= product._id %>" method="POST" enctype="multipart/form-data">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" value="<%= product.name %>" required>
+  
+      <label for="description">Descripción:</label>
+      <textarea id="description" name="description" required><%= product.description %></textarea>
+  
+      <label for="price">Precio:</label>
+      <input type="number" id="price" name="price" value="<%= product.price %>" required>
+  
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" value="<%= product.stock %>" required>
+  
+      <label for="colors">Colores (separados por comas):</label>
+      <input type="text" id="colors" name="colors" value="<%= product.colors.join(', ') %>" required>
+  
+      <label for="images">Imágenes:</label>
+      <input type="file" id="images" name="images" multiple>
+  
+      <button type="submit" class="Guardar">Guardar cambios</button>
+      <a href="/admin/dashboard" class="btn-cancel">Cancelar</a>
+    </form>
+  </div>
+</body>
+</html>

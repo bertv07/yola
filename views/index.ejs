@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .color-box {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      border-radius:4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Catálogo</h1>
+
+  <!-- Mostrar el enlace de inicio de sesión solo si el admin no ha iniciado sesión -->
+
+    
+  <div class="products">
+    <% products.forEach(product => { %>
+      <div class="product">
+        <% if (product.images.length > 0) { %>
+          <img src="<%= product.images[0] %>" alt="<%= product.name %>">
+        <% } %>
+        <div class="pro">
+
+          <h2 class="name"><%= product.name %></h2>
+          <p>
+            <% product.colors.forEach(color => { %>
+              <div class="color-box" style="background-color: <%= getCssColor(color) %>;"></div>
+            <% }) %>
+          </p>
+          <p><%= product.description %></p>
+          <div class="pre">
+            <p class="precio">$<%= product.price %></p>
+          </div>
+
+        </div>  
+
+      </div>
+    <% }) %>
+    
+  </div>
+  <% if (!adminHasLoggedIn) { %>
+    <a href="/auth/login"></a>
+  <% } %>
+</body>
+</html>

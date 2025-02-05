@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .color-box {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Panel de Administración</h1>
+
+  <!-- Enlace para agregar un nuevo producto -->
+  <a href="/admin/add-product">Agregar producto</a>
+
+  <!-- Lista de productos -->
+  <h2>Productos creados</h2>
+  <div class="products">
+    <% products.forEach(product => { %>
+      <div class="product pro-ad">
+        <div class="pro-cen">
+          <h3><%= product.name %></h3>
+          <p><%= product.description %></p>
+          <p>Precio: $<%= product.price %></p>
+          <p>Stock: <%= product.stock %></p>
+          <p>Colores:
+            <p>Colores:
+              <% product.colors.forEach(color => { %>
+                <div class="color-box" style="background-color: <%= getCssColor(color) %>;"></div>
+              <% }) %>
+            </p>
+          </p>
+        </div>
+        <% if (product.images.length > 0) { %>
+          <img src="<%= product.images[0] %>" alt="<%= product.name %>">
+        <% } %>
+
+        <!-- Botones de eliminar y actualizar -->
+        <div class="actions">
+          <form action="/admin/delete-product/<%= product._id %>" method="POST" style="display: inline;" class="form-eliminar">
+            <button type="submit" class="btn-delete">Eliminar</button>
+          </form>
+          <a href="/admin/update-product/<%= product._id %>" class="btn-update">Actualizar</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

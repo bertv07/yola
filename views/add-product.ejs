@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir Producto</title>
+  <script>
+    window.onload = function() {
+      var successMessage = "<%= success %>";
+      if (successMessage) {
+        alert(successMessage);
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Añadir producto</h1>
+  <form action="/admin/products" method="post" enctype="multipart/form-data">
+    <div>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="description">Descripción:</label>
+      <input type="text" id="description" name="description" required>
+    </div>
+    <div>
+      <label for="price">Precio:</label>
+      <input type="number" id="price" name="price" required>
+    </div>
+    <div>
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" required>
+    </div>
+    <div>
+      <label for="colors">Colores (separados por comas):</label>
+      <input type="text" id="colors" name="colors" required>
+    </div>
+    <div>
+      <label for="images">Imágenes:</label>
+      <input type="file" id="images" name="images" multiple>
+    </div>
+    <button type="submit">Añadir Producto</button>
+  </form>
+
+  <h2>Productos existentes</h2>
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <h3><%= product.name %></h3>
+        <p><%= product.description %></p>
+        <p>Precio: <%= product.price %></p>
+        <p>Stock: <%= product.stock %></p>
+        <p>Colores: <%= product.colors.join(', ') %></p>
+        <div>
+          <img src="<%= product.images[0] %>" alt="<%= product.name %>" width="100" height="100">
+        </div>
+        <form action="/admin/products/delete/<%= product._id %>" method="post">
+          <button type="submit">Eliminar</button>
+        </form>
+        <form action="/admin/products/update/<%= product._id %>" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="name" value="<%= product.name %>">
+          <input type="hidden" name="description" value="<%= product.description %>">
+          <input type="hidden" name="price" value="<%= product.price %>">
+          <input type="hidden" name="stock" value="<%= product.stock %>">
+          <input type="hidden" name="colors" value="<%= product.colors.join(', ') %>">
+          <label for="images">Añadir imágenes:</label>
+          <input type="file" id="images" name="images" multiple>
+          <button type="submit">Actualizar</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
