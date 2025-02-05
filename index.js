@@ -4,7 +4,6 @@ const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
 const path = require('path');
-const { adminHasLoggedIn } = require('./globals');
 
 const app = express();
 const port = 3000;
@@ -21,7 +20,7 @@ require('./config/passport')(passport);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Servir archivos estáticos desde "uploads"
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Configuración de sesión
 app.use(
@@ -37,12 +36,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-// Variables globales para mensajes flash y el estado del admin
+// Variables globales para mensajes flash
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
-  res.locals.adminHasLoggedIn = adminHasLoggedIn;
   next();
 });
 
