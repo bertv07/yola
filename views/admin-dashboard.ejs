@@ -31,13 +31,11 @@
           <p><%= product.description %></p>
           <p>Precio: $<%= product.price %></p>
           <p>Stock: <%= product.stock %></p>
-          <p>Colores:
             <p>Colores:
               <% product.colors.forEach(color => { %>
                 <div class="color-box" style="background-color: <%= getCssColor(color) %>;"></div>
               <% }) %>
             </p>
-          </p>
         </div>
         <% if (product.images.length > 0) { %>
           <img src="<%= product.images[0] %>" alt="<%= product.name %>">

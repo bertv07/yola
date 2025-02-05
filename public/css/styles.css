@@ -202,23 +202,14 @@ body {
       width: 12rem;
       height: 22rem;
     }
-  }
-  @media (max-width: 600px) {
-    .actions form{
-      margin-top: -2rem;
-      margin-left: -1rem;
-    }
-    .actions a{
-      margin-top: 1rem;
-      margin-left: 1rem;
+    .pro-ad{
+      height: 35rem;
     }
   }
+
   @media (max-width: 570px) {
     .actions form{
       margin-top: -2rem;
-    }
-    .pro-ad img{
-      margin-left: -7rem;
     }
   }
   @media (max-width: 480px) {
@@ -241,8 +232,22 @@ body {
     .precio{
       margin-left: 50%;
     }
+    .pro-ad{
+      height: 32rem;
+    }
+    .btn-delete{
+      margin-left: 1rem;
+      font-size: .8rem;
+    }
+    .actions a{
+      margin-left: 5rem;
+      font-size: .8rem;
+    }
   }
   @media (max-width: 420px) {
+    h1{
+      font-size: 1.5rem;
+    }
     .product{
       width: 8rem;
       height: 20rem;
@@ -261,6 +266,18 @@ body {
     }
     .precio{
       margin-left: 50%;
+    }
+    .pro-ad{
+      height: 34rem;
+    }
+    .btn-delete{
+      margin-top: 5.5rem;
+      margin-left: 3.5rem;
+      font-size: .8rem;
+    }
+    .actions a{
+      margin-left: 0rem;
+      font-size: .8rem;
     }
   }
   @media (max-width: 360px) {
@@ -282,6 +299,10 @@ body {
     }
     .precio{
       margin-left: 40%;
+    }
+    .pro-ad{
+      width: 7.8rem;
+      height: 32rem;
     }
   }
   @media (max-width: 340px) {
