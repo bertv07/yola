@@ -33,7 +33,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({ mongoUrl: 'mongodb+srv://gleybert:V07020207@catalogo.tfnw7.mongodb.net/?retryWrites=true&w=majority&appName=catalogo' }),
-    cookie: { secure: false } // Cambia a true si usas HTTPS
+    cookie: { secure: true } // Cambia a true si usas HTTPS
   })
 );
 
