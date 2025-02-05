@@ -1,5 +1,2 @@
 # Ignorar node_modules
 node_modules/
-
-# Ignorar la carpeta uploads (si no quieres subir archivos subidos)
-uploads/
