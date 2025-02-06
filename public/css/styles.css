@@ -295,14 +295,14 @@ body {
     .product{
       margin: .5rem;
       width: 9rem;
-      height: 17rem;
+      height: 18rem;
       margin-left: 0;
     }
     .products{
       margin: .3rem;
     }
     .product img{
-      height: 8rem;
+      height: 9rem;
     }
     .name{
       font-size: 1rem;
