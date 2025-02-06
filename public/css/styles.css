@@ -24,6 +24,8 @@
 body {
     font-family: "Poppins", serif;
     margin: 0;
+    padding: 0;
+    border: 0;
   }
   .actions{
     margin-top: 2rem;
@@ -248,15 +250,19 @@ body {
     h1{
       font-size: 1.5rem;
     }
+    .products{
+      margin: 0;
+    }
     .product{
-      width: 8rem;
-      height: 18rem;
+      margin: .5rem;
+      width: 10rem;
+      height: 20rem;
     }
     .product img{
       height: 10rem;
     }
     .name{
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: -1.1rem;
       width: 100%;
     }
@@ -266,6 +272,7 @@ body {
     }
     .precio{
       margin-left: 50%;
+      position: relative;
     }
     .pro-ad{
       height: 34rem;
@@ -284,16 +291,21 @@ body {
       font-size: .8rem;
     }
   }
-  @media (max-width: 360px) {
+  @media (max-width: 380px) {
     .product{
-      width: 6rem;
-      height: 16rem;
+      margin: .5rem;
+      width: 9rem;
+      height: 17rem;
+      margin-left: 0;
+    }
+    .products{
+      margin: .3rem;
     }
     .product img{
-      height: 7rem;
+      height: 8rem;
     }
     .name{
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: -1.1rem;
       width: 100%;
     }
@@ -302,7 +314,7 @@ body {
       margin-bottom: -1rem;
     }
     .precio{
-      margin-left: 40%;
+      margin-left: 50%;
     }
     .pro-ad{
       width: 7.8rem;
