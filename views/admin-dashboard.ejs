@@ -31,14 +31,16 @@
           <p><%= product.description %></p>
           <p>Precio: $<%= product.price %></p>
           <p>Stock: <%= product.stock %></p>
-            <p>Colores:
-              <% product.colors.forEach(color => { %>
-                <div class="color-box" style="background-color: <%= getCssColor(color) %>;"></div>
-              <% }) %>
-            </p>
+          <p>Colores:
+            <% product.colors.forEach(color => { %>
+              <div class="color-box" style="background-color: <%= getCssColor(color) %>;"></div>
+            <% }) %>
+          </p>
         </div>
-        <% if (product.images.length > 0) { %>
-          <img src="<%= product.images[0] %>" alt="<%= product.name %>">
+        <% if (product.images.length > 0 && product.images[0].data) { %>
+          <img src="data:<%= product.images[0].contentType %>;base64,<%= product.images[0].data.toString('base64') %>" alt="<%= product.name %>">
+        <% } else { %>
+          <p>No hay imagen</p>
         <% } %>
 
         <!-- Botones de eliminar y actualizar -->

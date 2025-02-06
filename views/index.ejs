@@ -11,24 +11,22 @@
       width: 20px;
       height: 20px;
       margin-right: 5px;
-      border-radius:4px;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
   <h1>Catálogo</h1>
 
-  <!-- Mostrar el enlace de inicio de sesión solo si el admin no ha iniciado sesión -->
-
-    
   <div class="products">
     <% products.forEach(product => { %>
       <div class="product">
-        <% if (product.images.length > 0) { %>
-          <img src="<%= product.images[0] %>" alt="<%= product.name %>">
+        <% if (product.images && product.images.length > 0 && product.images[0].data) { %>
+          <img src="data:<%= product.images[0].contentType %>;base64,<%= product.images[0].data.toString('base64') %>" alt="<%= product.name %>">
+        <% } else { %>
+          <p>No hay imagen disponible</p>
         <% } %>
         <div class="pro">
-
           <h2 class="name"><%= product.name %></h2>
           <p>
             <% product.colors.forEach(color => { %>
@@ -39,15 +37,11 @@
           <div class="pre">
             <p class="precio">$<%= product.price %></p>
           </div>
-
-        </div>  
-
+        </div>
       </div>
     <% }) %>
-    
   </div>
 
-    <a href="/auth/login"></a>
-
+  <a href="/auth/login"></a>
 </body>
 </html>

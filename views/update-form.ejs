@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+  <h1>Actualizar Producto</h1>
   <div class="centrar">
-    <h1>Actualizar producto</h1>
     <form action="/admin/update-product/<%= product._id %>" method="POST" enctype="multipart/form-data">
       <label for="name">Nombre:</label>
       <input type="text" id="name" name="name" value="<%= product.name %>" required>
@@ -23,14 +23,27 @@
       <input type="number" id="stock" name="stock" value="<%= product.stock %>" required>
   
       <label for="colors">Colores (separados por comas):</label>
-      <input type="text" id="colors" name="colors" value="<%= product.colors.join(', ') %>" required>
+      <input type="text" id="colors" name="colors" value="<%= product.colors.join(',') %>" required>
   
       <label for="images">Imágenes:</label>
-      <input type="file" id="images" name="images" multiple>
+      <input type="file" id="images" name="images" multiple accept="image/*">
   
-      <button type="submit" class="Guardar">Guardar cambios</button>
-      <a href="/admin/dashboard" class="btn-cancel">Cancelar</a>
+      <% if (product.images && product.images.length > 0) { %>
+        <div>
+          <h3>Imágenes actuales:</h3>
+          <% product.images.forEach(image => { %>
+            <% if (image.data) { %>
+              <img src="data:<%= image.contentType %>;base64,<%= image.data.toString('base64') %>" alt="Imagen del producto" style="width: 100px; height: auto;">
+            <% } else { %>
+              <p>Imagen no disponible</p>
+            <% } %>
+          <% }) %>
+        </div>
+      <% } %>
+  
+      <button type="submit">Actualizar Producto</button>
     </form>
+
   </div>
 </body>
 </html>

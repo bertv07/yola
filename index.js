@@ -56,7 +56,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Rutas
 app.use('/', require('./routes/client'));
-app.use('/admin', require('./routes/admin'));
+app.use('/admin', require('./routes/admin')); // Asegúrate de que esta línea esté presente
 app.use('/auth', require('./routes/auth'));
 
 // Iniciar el servidor

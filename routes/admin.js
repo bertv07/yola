@@ -109,7 +109,10 @@ router.post('/add-product', ensureAuthenticated, upload.array('images', 5), asyn
     const { name, description, price, stock, colors } = req.body;
 
     const colorsArray = typeof colors === 'string' ? colors.split(',') : colors;
-    const images = req.files ? req.files.map(file => `/uploads/${file.filename}`) : [];
+    const images = req.files.map(file => ({
+      data: file.buffer, // Datos binarios de la imagen
+      contentType: file.mimetype, // Tipo de imagen (por ejemplo, 'image/jpeg')
+    }));
 
     const newProduct = new Product({
       name,
@@ -157,7 +160,10 @@ router.post('/update-product/:id', ensureAuthenticated, upload.array('images', 5
     const { name, description, price, stock, colors } = req.body;
 
     const colorsArray = typeof colors === 'string' ? colors.split(',') : colors;
-    const images = req.files ? req.files.map(file => `/uploads/${file.filename}`) : [];
+    const images = req.files.map(file => ({
+      data: file.buffer, // Datos binarios de la imagen
+      contentType: file.mimetype, // Tipo de imagen (por ejemplo, 'image/jpeg')
+    }));
 
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,

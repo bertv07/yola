@@ -250,13 +250,13 @@ body {
     }
     .product{
       width: 8rem;
-      height: 20rem;
+      height: 21rem;
     }
     .product img{
       height: 10rem;
     }
     .name{
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       margin-bottom: -1.1rem;
       width: 100%;
     }
@@ -275,6 +275,10 @@ body {
       margin-left: 3.5rem;
       font-size: .8rem;
     }
+    p{
+      margin-top: .5rem;
+      font-size: .8rem;
+    }
     .actions a{
       margin-left: 0rem;
       font-size: .8rem;
@@ -283,13 +287,13 @@ body {
   @media (max-width: 360px) {
     .product{
       width: 6rem;
-      height: 19.5rem;
+      height: 18.5rem;
     }
     .product img{
-      height: 8rem;
+      height: 7rem;
     }
     .name{
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       margin-bottom: -1.1rem;
       width: 100%;
     }
@@ -303,6 +307,9 @@ body {
     .pro-ad{
       width: 7.8rem;
       height: 32rem;
+    }
+    .product p{
+      font-size: .7rem;
     }
   }
   @media (max-width: 340px) {

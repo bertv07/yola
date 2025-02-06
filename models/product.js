@@ -19,14 +19,14 @@ const productSchema = new mongoose.Schema({
   },
   colors: {
     type: [String],
-    default: [],
+    required: true,
   },
-  images: {
-    type: [String],
-    default: [],
-  },
+  images: [
+    {
+      data: Buffer, // Almacena los datos binarios de la imagen
+      contentType: String, // Almacena el tipo de imagen (por ejemplo, 'image/jpeg')
+    },
+  ],
 });
 
-const Product = mongoose.model('Product', productSchema);
-
-module.exports = Product;
+module.exports = mongoose.model('Product', productSchema);
