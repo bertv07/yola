@@ -250,7 +250,7 @@ body {
     }
     .product{
       width: 8rem;
-      height: 21rem;
+      height: 18rem;
     }
     .product img{
       height: 10rem;
@@ -276,8 +276,8 @@ body {
       font-size: .8rem;
     }
     p{
-      margin-top: .5rem;
-      font-size: .8rem;
+      margin-top: 1rem;
+      font-size: .9rem;
     }
     .actions a{
       margin-left: 0rem;
@@ -287,7 +287,7 @@ body {
   @media (max-width: 360px) {
     .product{
       width: 6rem;
-      height: 14rem;
+      height: 16rem;
     }
     .product img{
       height: 7rem;
